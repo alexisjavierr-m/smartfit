@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html layout:decorate="~{layout}"
+      xmlns:th="http://thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head><meta charset="UTF-8"/></head>
+<body>
+	
+	    <section class="layout-content" layout:fragment="corpo">
+	
+	        <nav class="navbar navbar-expand-md bg-light">
+	            <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+	                <ul class="navbar-nav mr-auto">
+	                    <li class="nav-item active">
+	                        <i class="oi oi-caret-right"></i>
+	                        <span>Agregar Salas</span>
+	                    </li>
+	                </ul>
+	                <a class="btn btn-primary btn-md" href="/salas/listar" role="button">
+	                    <span class="oi oi-spreadsheet" title="Listar" aria-hidden="true"></span>
+	                    <span>Mostrar Salas</span>
+	                </a>
+	            </div>
+	        </nav>
+	
+	        <div class="container" id="cadastro">
+	        
+	        	<div th:replace="fragments/alert"></div>
+	        	
+				<form th:action="${sala.id == null} ? @{/salas/salvar} : @{/salas/editar}" 
+				      th:object="${sala}" method="POST">
+				    <div class="form-row">
+				        <div class="form-group col-md-4">
+				            <label for="nome">Nombre de la Sala</label>
+				            <input type="text" class="form-control" id="nombre"
+				                   placeholder="¿Como se llama?" autofocus="autofocus" th:field="*{nombre}"/>
+				        </div>
+				    <div class="form-group col-md-4">
+	                        <label for="departamento">Sede</label>
+	                        <select id="departamento" class="form-control" th:field="*{departamento}">
+	                            <option value="">Seleccionar Sede</option>
+	                            <option th:each="d : ${departamentos}" 
+	                                    th:value="${d.id}" th:text="${d.nombre}"></option>
+	                        </select>
+				     </div>
+				    <div class="form-group col-md-4">
+	                        <label for="estado">Estado de Sala</label>
+	                        <select id="estado" class="form-control" th:field="*{estado}">
+	                            <option value="">Seleccionar estado</option>
+	                            <option th:each="e : ${estados}" 
+	                                    th:value="${e.id}" th:text="${e.estado}"></option>
+	                        </select>
+				     </div>
+				    </div>
+				    <input type="hidden" id="id" th:field="*{id}"/>
+				    <button type="submit" class="btn btn-primary btn-sm">Guardar</button>
+				</form>
+	        </div>
+	    </section>
+</body>
+</html>

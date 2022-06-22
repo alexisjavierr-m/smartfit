@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html layout:decorate="~{layout}"
+      xmlns:th="http://thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head><meta charset="UTF-8"/></head>
+<body>
+	
+	    <section class="layout-content" layout:fragment="corpo">
+	
+	                        <div id="center">
+	                <a class="btn btn-primary btn-md" href="/departamentos/listar" role="button">
+	                    <span class="oi oi-spreadsheet" title="Listar" aria-hidden="true"></span>
+	                    <span>Mostrar sedes</span>
+	                </a>
+	            </div>
+	
+	        <div class="container" id="cadastro">
+	        
+	        	<div th:replace="fragments/alert"></div>
+	        	
+				<form th:action="${departamento.id == null} ? @{/departamentos/salvar} : @{/departamentos/editar}" 
+				      th:object="${departamento}" method="POST">
+				    <div class="form-row">
+				        <div class="form-group col-md-6">
+				            <label for="nome">Nombre de la Sede</label>
+				            <input type="text" class="form-control" id="nombre"
+				                   placeholder="¿Como se llama?" autofocus="autofocus" th:field="*{nombre}"/>
+				        </div>
+				          <div class="form-group col-md-6">
+				            <label for="nome">Región</label>
+				            <input type="text" class="form-control" id="regionSede"
+				                   placeholder="Su Región" autofocus="autofocus" th:field="*{regionSede}"/>
+				        </div>
+				        <div class="form-group col-md-6">
+				            <label for="nome">Comuna</label>
+				            <input type="text" class="form-control" id="comunaSede"
+				                   placeholder="Su Comuna" autofocus="autofocus" th:field="*{comunaSede}"/>
+				        </div>
+				    </div>
+				    <input type="hidden" id="id" th:field="*{id}"/>
+				    <button type="submit" class="btn btn-primary">Guardar</button>
+				</form>
+	        </div>
+	    </section>
+	    
+</body>
+</html>

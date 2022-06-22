@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="es" xmlns="http://www.w3.org/1999/xhtml" 
+      xmlns:th="http://thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+	<meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+	
+</head>
+<body>
+  <!--  
+			<nav class="sidebar sidebar-open" th:fragment="nav-sidebar">
+				<ul class="nav nav-pills">
+					<li class="nav-item"><a class="nav-link " href="/"> <i
+							class="oi oi-home"></i> <span>Inicio</span>
+					</a></li>
+				</ul>
+
+				<ul class="nav nav-pills">
+					<li class="nav-item"><span class="nav-link active" >Sede</span></li>
+					<li class="nav-item"><a class="nav-link"
+						href="/departamentos/cadastrar"> <i class="oi oi-plus"></i> <span>Agregar</span>
+					</a></li>
+					<li class="nav-item"><a class="nav-link"
+						href="/departamentos/listar"> <i class="oi oi-spreadsheet"></i>
+							<span>Listado</span>
+					</a></li>
+				</ul>
+
+				<ul class="nav nav-pills">
+					<li class="nav-item"><span class="nav-link active" >Sala</span></li>
+					<li class="nav-item"><a class="nav-link" 
+						href="/salas/cadastrar"> <i class="oi oi-plus"></i> <span>Agregar</span>
+					</a></li>
+					<li class="nav-item"><a class="nav-link" 
+						href="/salas/listar"> <i
+							class="oi oi-spreadsheet"></i> <span>Listado</span>
+					</a></li>
+				</ul>
+				
+				<ul class="nav nav-pills">
+					<li class="nav-item"><span class="nav-link active" >Perfiles</span></li>
+					<li class="nav-item"><a class="nav-link" 
+						href="/cargos/cadastrar"> <i class="oi oi-plus"></i> <span>Agregar</span>
+					</a></li>
+					<li class="nav-item"><a class="nav-link" 
+						href="/cargos/listar"> <i
+							class="oi oi-spreadsheet"></i> <span>Listado</span>
+					</a></li>
+				</ul>
+
+				<ul class="nav nav-pills">
+					<li class="nav-item"><span class="nav-link active">Colaboradores</span></li>
+					<li class="nav-item"><a class="nav-link" 
+						href="/funcionarios/cadastrar"> <i class="oi oi-plus"></i> <span>Agregar</span>
+					</a></li>
+					<li class="nav-item"><a class="nav-link" 
+						href="/funcionarios/listar"> <i class="oi oi-spreadsheet"></i> <span>Listado</span>
+					</a></li>
+				</ul>
+				
+				<ul class="nav nav-pills">
+					<li class="nav-item"><span class="nav-link active">Clases</span></li>
+					<li class="nav-item"><a class="nav-link" 
+						href="/clases/cadastrar"> <i class="oi oi-plus"></i> <span>Agregar</span>
+					</a></li>
+					<li class="nav-item"><a class="nav-link" 
+						href="/clases/listar"> <i class="oi oi-spreadsheet"></i> <span>Listado</span>
+					</a></li>
+				</ul>
+			</nav>
+			
+			-->
+			
+			<!-- start sidebar -->
+  <nav th:fragment="nav-sidebar">
+      <!-- start admin -->
+  <section id="admin">
+  <!-- start sidebar -->
+  <div class="sidebar">
+    <!-- start with head -->
+    <div class="head">
+      <div class="logo">
+        <img src="/img/logo-admin.webp" alt="smart fit">
+      </div>
+      <a href="#" class="btn btn-danger">Smart Fit</a>
+    </div>
+    <!-- end with head -->
+    <!-- start the list -->
+    <div id="list">
+      <ul class="nav flex-column">
+        <li class="nav-item"><a href="/" class="nav-link active" ><i class="fa fa-adjust"></i>Información</a></li>
+        
+        <li class="nav-item"><a href="#menu3" class="nav-link collapsed" data-toggle="collapse"><i class="fa fa-fire"></i>SEDE<span class="sub-ico"><i class="fa fa-angle-down"></i></span></a></li>
+        <li class="sub collapse" id="menu3">
+            <a href="/departamentos/cadastrar" class="nav-link" data-parent="#menu3">Agregar</a>
+            <a href="/departamentos/listar" class="nav-link" data-parent="#menu3">Listado</a>
+        </li>
+        
+        <li class="nav-item"><a href="#menu4" class="nav-link collapsed" data-toggle="collapse"><i class="fa fa-fire"></i>SALA<span class="sub-ico"><i class="fa fa-angle-down"></i></span></a></li>
+        <li class="sub collapse" id="menu4">
+            <a href="/salas/cadastrar" class="nav-link" data-parent="#menu4">Agregar</a>
+            <a href="/salas/listar" class="nav-link" data-parent="#menu4">Listado</a>
+        </li>
+        
+        <li class="nav-item"><a href="#menu5" class="nav-link collapsed" data-toggle="collapse"><i class="fa fa-fire"></i>PERFILES<span class="sub-ico"><i class="fa fa-angle-down"></i></span></a></li>
+        <li class="sub collapse" id="menu5">
+            <a href="/cargos/cadastrar" class="nav-link" data-parent="#menu5">Agregar</a>
+            <a href="/cargos/listar" class="nav-link" data-parent="#menu5">Listado</a>
+        </li>
+        
+        <li class="nav-item"><a href="#menu7" class="nav-link collapsed" data-toggle="collapse"><i class="fa fa-fire"></i>COLABORADORES<span class="sub-ico"><i class="fa fa-angle-down"></i></span></a></li>
+        <li class="sub collapse" id="menu7">
+            <a href="/funcionarios/cadastrar" class="nav-link" data-parent="#menu7">Agregar</a>
+            <a href="/funcionarios/listar" class="nav-link" data-parent="#menu7">Listado</a>
+        </li>
+        
+         <li class="nav-item"><a href="#menu8" class="nav-link collapsed" data-toggle="collapse"><i class="fa fa-fire"></i>CLASES<span class="sub-ico"><i class="fa fa-angle-down"></i></span></a></li>
+        <li class="sub collapse" id="menu8">
+            <a href="/clases/cadastrar" class="nav-link" data-parent="#menu8">Agregar</a>
+            <a href="/clases/listar" class="nav-link" data-parent="#menu8">Listado</a>
+        </li>
+        
+      </ul>
+    </div>
+    <!-- end the list -->
+  </div>
+  <!-- end sidebar -->
+  <!-- start content -->
+  <div class="content">
+    <!-- start content head -->
+    <div class="head">
+      <!-- head top -->
+      <div class="top">
+        <div class="left">
+          <button id="on" class="btn btn-info"><i class="fa fa-bars"></i></button>
+          <button id="off" class="btn btn-info hide"><i class="fa fa-align-left"></i></button>
+        </div>
+          <div class="dropdown">
+            <button class="btn btn-info dropdown-toggle" id="userDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Cerrar Sesión</button>
+            <div class="dropdown-menu" aria-labelledby="userDropdown">
+             <a class="dropdown-item" href="#">profile</a>
+           </div>
+          </div>
+        </div>
+      </div>
+      <!-- end head top -->  
+    </div>
+    <!-- end content head -->
+
+</section>
+<!-- end admin -->
+ </nav>
+    
+</body>
+</html>

@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html layout:decorate="~{layout}"
+      xmlns:th="http://thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+	<meta charset="UTF-8"/>
+</head>
+<body>
+		
+	<section class="layout-content" layout:fragment="corpo">	
+		
+		<div class="container">
+			<div id="list-home" class="row">
+				<div class="col-4">
+					<div class="list-group" id="list-tab" role="tablist">
+						<a class="list-group-item list-group-item-action active"
+							id="list-planes-list" data-toggle="list" href="#planes"
+							role="tab" aria-controls="planes">Planes</a> <a
+							class="list-group-item list-group-item-action" id="list-extra-list"
+							data-toggle="list" href="#extra" role="tab" aria-controls="extra">Extras</a>
+							<a class="list-group-item list-group-item-action"
+							id="list-shape-list" data-toggle="list" href="#shape"
+							role="tab" aria-controls="shape">Shape</a> <a
+							class="list-group-item list-group-item-action"
+							id="list-smartBox-list" data-toggle="list" href="#smartBox"
+							role="tab" aria-controls="smartBox">Smart Box</a> <a
+							class="list-group-item list-group-item-action"
+							id="list-smartClass-list" data-toggle="list" href="#smartClass"
+							role="tab" aria-controls="smartClass">Smart Class</a> <a
+							class="list-group-item list-group-item-action"
+							id="list-hit-list" data-toggle="list" href="#hit"
+							role="tab" aria-controls="hit">Hit</a>
+							<a class="list-group-item list-group-item-action"
+							id="list-hiit-list" data-toggle="list" href="#hiit"
+							role="tab" aria-controls="hiit">Hiit</a>
+					</div>
+				</div>
+				<div class="col-8">
+					<div class="tab-content" id="nav-tabContent">
+						<div class="tab-pane fade show active" id="planes"
+							role="tabpanel" aria-labelledby="list-planes-list">
+							<div class="list-group" id="list-tab" role="tablist">
+						<div>	
+						<a class="list-group-item list-group-item-action active"
+							id="list-anual-list" data-toggle="list" href="#anual"
+							role="tab" aria-controls="anual">Anual</a>
+							
+							</div>
+							<a class="list-group-item list-group-item-action" id="list-semestral-list"
+							data-toggle="list" href="#semestral" role="tab" aria-controls="semestral">Semestral</a> 
+							
+							<a class="list-group-item list-group-item-action"
+							id="list-mensual-list" data-toggle="list" href="#mensual"
+							role="tab" aria-controls="mensual">Mensual</a> 
+							
+					</div>
+						
+						</div>
+						
+						<div class="tab-pane fade" id="extra" role="tabpanel"
+							aria-labelledby="list-extra-list">
+							<div class="tab-pane fade show active" id="extra"
+							role="tabpanel" aria-labelledby="list-extra-list">
+							<div class="list-group" id="list-tab" role="tablist">
+						<a class="list-group-item list-group-item-action active"
+							id="list-zumba-list" data-toggle="list" href="#zumba"
+							role="tab" aria-controls="zumba">Zumba</a> <a
+							class="list-group-item list-group-item-action" id="list-kb-list"
+							data-toggle="list" href="#kb" role="tab" aria-controls="kb">Kick Boxing</a> 
+							<a class="list-group-item list-group-item-action"
+							id="list-yoga-list" data-toggle="list" href="#yoga"
+							role="tab" aria-controls="yoga">Yoga</a> 
+							<a class="list-group-item list-group-item-action"
+							id="list-entrenamiento-list" data-toggle="list" href="#entrenamiento"
+							role="tab" aria-controls="entrenamiento">Entrenamiento</a> 
+							
+					</div>
+						
+						</div>
+						</div>
+						<div class="tab-pane fade" id="anual" role="tabpanel"
+							aria-labelledby="list-anual-list">
+							<img src="planBlack.jpg" width="auto" height="auto">
+						</div>
+						<div class="tab-pane fade" id="shape" role="tabpanel"
+							aria-labelledby="list-shape-list">
+							¿Qué es el ejercicio Shape?
+							
+							Es un método de entrenamiento dinámico y eficiente, 
+							enfocado en mejorar tu capacidad física, pérdida de peso y 
+							reducción de % grasa. Son sólo 30 minutos trabajando en alta 
+							intensidad, con resultados rápidos, dirigido especialmente para 
+							los que tienen poco tiempo para entrenar.
+						</div>
+						<div class="tab-pane fade" id="smartBox" role="tabpanel"
+							aria-labelledby="list-smartBox-list">
+							¿Qué es Smart Box ejercicio?
+							
+						Resultado de imagen para ejercicio smart box
+						A diferencia de los ejercicios tradicionales, que 
+						se enfocan exclusivamente en un determinado grupo muscular, 
+						en el entrenamiento funcional se realizan movimientos multi-articulares 
+						o compuestos, es decir, que involucran diferentes partes del cuerpo 
+						en el mismo ejercicio y por consiguiente, los beneficios son mayores.
+						</div>
+						<div class="tab-pane fade" id="smartClass" role="tabpanel"
+							aria-labelledby="list-smartClass-list">
+					 Smart Class, un salón de clases en grupo con actividades alternativas 
+					 para alcanzar tus objetivos: Yoga, Zumba, Body Combat, Abdomen y Glúteo.
+						</div>
+						<div class="tab-pane fade" id="hit" role="tabpanel"
+							aria-labelledby="list-hit-list">
+						El HIT es una actividad deportiva consistente en un entrenamiento 
+						interválico de alta intensidad durante corto espacio de tiempo. 
+						Se realizan ejercicios a alta intensidad que se combinan con descansos breves.
+						</div>
+						<div class="tab-pane fade" id="hiit" role="tabpanel"
+							aria-labelledby="list-hiit-list">
+						Es un tipo de entrenamiento deportivo basado en sesiones de intervalos 
+						cortos y muy intensos que alternan esfuerzo y recuperación.
+
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+	</section>		
+</body>
+</html>

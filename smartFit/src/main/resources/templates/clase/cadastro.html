@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html layout:decorate="~{layout}"
+      xmlns:th="http://thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head><meta charset="UTF-8"/></head>
+<body>
+	
+	    <section class="layout-content" layout:fragment="corpo">
+	
+	        <nav class="navbar navbar-expand-md bg-light">
+	            <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+	                <ul class="navbar-nav mr-auto">
+	                    <li class="nav-item active">
+	                        <i class="oi oi-caret-right"></i>
+	                        <span>Agregar Clase</span>
+	                    </li>
+	                </ul>
+	                <a class="btn btn-primary btn-md" href="/clases/listar" role="button">
+	                    <span class="oi oi-spreadsheet" title="Listar" aria-hidden="true"></span>
+	                    <span>Mostrar Clase</span>
+	                </a>
+	            </div>
+	        </nav>
+	
+	        <div class="container" id="cadastro">
+	        
+	        	<div th:replace="fragments/alert"></div>
+	        	
+				<form th:action="${clase.id == null} ? @{/clases/salvar} : @{/clases/editar}" 
+				      th:object="${clase}" method="POST">
+				    <div class="form-row">
+				        <div class="form-group col-md-4">
+				            <label for="nome">Nombre del Monitor Principal</label>
+				            <input type="text" class="form-control" id="monitor1"
+				                   placeholder="¿Como se llama?" autofocus="autofocus" th:field="*{monitor1}"/>
+				        </div>
+				                <div class="form-group col-md-4">
+				            <label for="nome">Nombre del Monitor Suplente</label>
+				            <input type="text" class="form-control" id="monitor2"
+				                   placeholder="¿Como se ayudante?" autofocus="autofocus" th:field="*{monitor2}"/>
+				        </div>
+
+				    <div class="form-group col-md-4">
+	                        <label for="departamento">¡En que sala se realiza?</label>
+	                        <select id="departamento" class="form-control" th:field="*{sala}">
+	                            <option value="">Seleccionar Sala</option>
+	                            <option th:each="s : ${salas}" 
+	                                    th:value="${s.id}" th:text="${s.nombre}"></option>
+	                        </select>
+				     </div>
+				    <div class="form-group col-md-4">
+	                        <label for="estado">Colaborador</label>
+	                        <select id="estado" class="form-control" th:field="*{funcionario}">
+	                            <option value="">Seleccionar Colaborador</option>
+	                            <option th:each="f : ${funcionarios}" 
+	                                    th:value="${f.id}" th:text="${f.nombre}"></option>
+	                        </select>
+				     </div>
+				    </div>
+				    <input type="hidden" id="id" th:field="*{id}"/>
+				    <button type="submit" class="btn btn-primary btn-sm">Guardar</button>
+				</form>
+	        </div>
+	    </section>
+</body>
+</html>
